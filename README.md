@@ -10,7 +10,7 @@ It can **play, pause, resume, replay, and stop** `.wav` audio files directly fro
    ```bash
    javac music.java
    Run the program:
-
+2. Run the Program:
 java music
 
 
