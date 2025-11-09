@@ -11,6 +11,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 public class music{
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
        boolean musicplay=true;
+       int c=1;
        try{
         File sound=new File("C:\\Users\\lenovo\\Downloads\\song.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(sound);
@@ -18,13 +19,19 @@ public class music{
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
         while(musicplay){
-        System.out.println("WHAT DO YOU WANT TO DO?\n | 'P' to play |\n | 'S' to stop |\n | 'R' to resume | \n | 'L' to pause |\n | 'E' to replay |");
+        System.out.println("WHAT DO YOU WANT TO DO?\n | 'P' to play   |\n | 'S' to stop   |\n | 'R' to resume | \n | 'L' to pause  |\n | 'E' to replay |");
         char a=sc.next().charAt(0);
         a=Character.toUpperCase(a);
         switch(a){
             case 'P'->{
+                if(c==1){
                 clip.start();
                 System.out.println("Playing...");
+                c++;}
+                else{
+                    System.out.println("YOU CAN ONLY PRESS PLAY ONCE");
+                    musicplay=false;
+                }
                 break;
             }
             case 'L'->{
