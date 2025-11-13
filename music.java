@@ -7,15 +7,14 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-
 public class music{
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
        boolean musicplay=true;
        int c=1;
+       Scanner sc=new Scanner(System.in);
        try{
-        File sound=new File("C:\\Users\\lenovo\\Downloads\\song.wav");
+        File sound=new File("song.wav");//your song here
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(sound);
-        Scanner sc=new Scanner(System.in);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
         while(musicplay){
@@ -74,5 +73,6 @@ public class music{
      catch(Exception e){
        System.out.println("SOMETHING WENT WRONG");
      }
+     sc.close();
     }
 }
